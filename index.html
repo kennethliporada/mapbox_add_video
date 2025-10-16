@@ -26,14 +26,14 @@ body { margin: 0; padding: 0; }
             'video': {
                 'type': 'video',
                 'urls': [
-                    'https://static-assets.mapbox.com/mapbox-gl-js/drone.mp4',
-                    'https://static-assets.mapbox.com/mapbox-gl-js/drone.webm'
+                    'https://upri-noah.s3.ap-southeast-1.amazonaws.com/sat_webm/ph_himawari_1.mp4',
+                    'https://upri-noah.s3.ap-southeast-1.amazonaws.com/sat_webm/ph_himawari.webm'
                 ],
                 'coordinates': [
-                    [-122.51596391201019, 37.56238816766053],
-                    [-122.51467645168304, 37.56410183312965],
-                    [-122.51309394836426, 37.563391708549425],
-                    [-122.51423120498657, 37.56161849366671]
+              [100.0, 29.25], // top-left
+              [160.0, 29.25], // top-right
+              [160.0, 5.0], // bottom-right
+              [100.0, 5.0], // bottom-left
                 ]
             }
         },
@@ -60,10 +60,8 @@ body { margin: 0; padding: 0; }
 
     const map = new mapboxgl.Map({
         container: 'map',
-        minZoom: 14,
-        zoom: 17,
-        center: [-122.514426, 37.562984],
-        bearing: -96,
+        zoom: 4.4,
+        center: [121.59, 12.51],
         style: videoStyle
     });
 
