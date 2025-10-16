@@ -4,11 +4,8 @@
 <meta charset="utf-8">
 <title>Add a video</title>
 <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
-    <link
-      href="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css"
-      rel="stylesheet"
-    />
-    <script src="https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.js"></script>
+<link href="https://api.mapbox.com/mapbox-gl-js/v3.15.0/mapbox-gl.css" rel="stylesheet">
+<script src="https://api.mapbox.com/mapbox-gl-js/v3.15.0/mapbox-gl.js"></script>
 <style>
 body { margin: 0; padding: 0; }
 #map { position: absolute; top: 0; bottom: 0; width: 100%; }
@@ -17,7 +14,7 @@ body { margin: 0; padding: 0; }
 <body>
 <div id="map"></div>
 <script>
-    mapboxgl.accessToken = 'pk.eyJ1IjoidXByaS1ub2FoIiwiYSI6ImNsZXc1am1hbzBkZ3Yzc280dHVrdHFpZ2MifQ.J13CArZfpEsGLzxXGOJQ7w';
+    mapboxgl.accessToken = 'pk.eyJ1Ijoia2VubmV0aGxpcG9yYWRhIiwiYSI6ImNrbW9yOHNnNzI3N3Eybm1pcHZnYzhybDMifQ.I78pgy46oXNAyhR7cMBx4A';
     const videoStyle = {
         'version': 8,
         'sources': {
@@ -29,14 +26,14 @@ body { margin: 0; padding: 0; }
             'video': {
                 'type': 'video',
                 'urls': [
-                    'https://upri-noah.s3.ap-southeast-1.amazonaws.com/sat_webm/ph_himawari_1.mp4',
-                    'https://upri-noah.s3.ap-southeast-1.amazonaws.com/sat_webm/ph_himawari.webm'
+                    'https://static-assets.mapbox.com/mapbox-gl-js/drone.mp4',
+                    'https://static-assets.mapbox.com/mapbox-gl-js/drone.webm'
                 ],
                 'coordinates': [
-              [100.0, 29.25], // top-left
-              [160.0, 29.25], // top-right
-              [160.0, 5.0], // bottom-right
-              [100.0, 5.0], // bottom-left
+                    [-122.51596391201019, 37.56238816766053],
+                    [-122.51467645168304, 37.56410183312965],
+                    [-122.51309394836426, 37.563391708549425],
+                    [-122.51423120498657, 37.56161849366671]
                 ]
             }
         },
@@ -63,10 +60,11 @@ body { margin: 0; padding: 0; }
 
     const map = new mapboxgl.Map({
         container: 'map',
-        zoom: 4.4,
-        center: [121.59, 12.51],
-        touchZoomRotate: true,
-        style: videoStyle,
+        minZoom: 14,
+        zoom: 17,
+        center: [-122.514426, 37.562984],
+        bearing: -96,
+        style: videoStyle
     });
 
 </script>
